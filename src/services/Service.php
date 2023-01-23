@@ -41,6 +41,10 @@ class Service extends Component
 
             $response = $this->_request('POST', 'survey/reviews/bulk', [
                 'json' => [$payload],
+            ])
+                
+            $response2 = $this->_request('POST', 'orders', [
+                'json' => [$payload],
             ]);
 
             Stamped::log('Order #' . $order->reference . ' sent to Stamped successfully.');
